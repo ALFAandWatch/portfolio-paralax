@@ -1,0 +1,94 @@
+/* reset.css - Reset CSS básico y moderno */
+
+/* 1) Box sizing más intuitivo */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+/* 2) Remover margenes por defecto y usar una tipografía base */
+html,
+body {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   line-height: 1.4; /* base razonable */
+   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+      Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+   color: inherit;
+   background: transparent;
+}
+
+/* 3) Imágenes y media: evitar overflow y respetar proporciones */
+img,
+picture,
+video,
+canvas,
+svg {
+   display: block;
+   max-width: 100%;
+   height: auto;
+}
+
+/* 4) Textos y headings: normalizar pesos y espaciados mínimos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   margin: 0;
+}
+
+/* 5) Parrafos y listas: quitar margenes por defecto */
+p,
+ul,
+ol,
+figure {
+   margin: 0;
+   padding: 0;
+}
+
+/* 6) Listas sin estilo por defecto */
+ul,
+ol {
+   list-style: none;
+}
+
+/* 7) Links: quitar subrayado por defecto, pero mantener accesibilidad */
+a {
+   text-decoration: none;
+}
+
+/* 8) Formularios y controles: heredar la fuente y simplificar estilos */
+button,
+input,
+select,
+textarea {
+   font: inherit;
+   margin: 0;
+   outline: none;
+}
+
+/* 9) Botones: cursor por defecto */
+button {
+   cursor: pointer;
+}
+
+/* 10) Tables: colapsar bordes */
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+/* 11) Accessibility helper: focus visible (mejor que outline por defecto) */
+:focus {
+   outline: none;
+}
+:focus-visible {
+   outline: 2px solid Highlight; /* reemplazá por tu color de accesibilidad si querés */
+   outline-offset: 2px;
+}
