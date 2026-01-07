@@ -18,10 +18,10 @@ export const projects = [
    {
       title: 'CARNES OBRA',
       description:
-         'Sitio web institucional con diseño moderno y navegación simple, orientado a presentar información esencial de la organización y sus políticas. Incluye secciones básicas y modales para Términos y Condiciones y Políticas de Privacidad.',
+         'Sitio web institucional con diseño moderno y navegación simple, orientado a presentar información esencial de la organización y sus políticas. Incluye secciones básicas, scroll con parallax y un formulario de contacto funcional.',
       image: '/carnesObra.png',
-      link: '',
-      inProgress: true,
+      link: 'https://obra.uy/',
+      inProgress: false,
    },
    {
       title: 'Planner.uy - Landing Page',
