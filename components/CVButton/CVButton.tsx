@@ -5,7 +5,7 @@ const CVButton = () => {
    return (
       <div className="flex gap-4">
          <a
-            href="/resume_alfonso_gonzalez_fullstackDeveloper.pdf"
+            href="/resume_Alfonso_Gonzalez_Fullstack_Developer.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="w-auto h-12 px-5 text-gray-300 border border-gray-300 hover:bg-violet-500 flex justify-center items-center rounded-full transition-colors duration-300 gap-2"
@@ -20,7 +20,7 @@ const CVButton = () => {
             />
          </a>
          <a
-            href="/resume_alfonso_gonzalez_fullstackDeveloper_(ENG).pdf"
+            href="/resume_Alfonso_Gonzalez_Fullstack_Developer_(ENG).pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="w-auto h-12 px-5 text-gray-300 border border-gray-300 hover:bg-violet-500 flex justify-center items-center rounded-full transition-colors duration-300 gap-2"
