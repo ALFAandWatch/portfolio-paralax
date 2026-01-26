@@ -18,7 +18,17 @@ export default function Home() {
             <section className="section-container fondo-seccion-1 sticky top-0 z-1 bg-black">
                <div className="w-full h-screen flex">
                   <div className="w-1/2 h-full flex items-center justify-end">
-                     <div className="foto-perfil-card relative w-3/4 h-3/4 bg-violet-500 hover:shadow-2xl hover:shadow-violet-300 transition-shadow duration-300">
+                     <div
+                        className="
+                                       foto-perfil-card relative w-3/4 h-3/4
+                                       rounded-3xl
+                                       bg-white/5 backdrop-blur-xl
+                                       border border-white/10
+                                       shadow-[0_20px_60px_rgba(139,92,246,0.35)]
+                                       hover:shadow-[0_30px_80px_rgba(139,92,246,0.55)]
+                                       transition-all duration-500
+                                       "
+                     >
                         <Image
                            src="/perfilbyn.png"
                            alt="Alfonso Gonzalez"
@@ -29,21 +39,22 @@ export default function Home() {
                      </div>
                   </div>
                   <div className="w-1/2 h-full flex flex-col justify-center mx-20 gap-4">
-                     <h1 className="text-7xl text-gray-300 font-bold font(family-name:--font-poppins) pb-8 shadow text-shadow">
-                        Hello World!
+                     <h1 className="text-7xl font-extrabold tracking-tight text-white">
+                        Hello World<span className="text-violet-500">.</span>
                      </h1>
-                     <p className="mt-4 text-5xl text-gray-300 font-normal">
+
+                     <p className="text-5xl font-semibold text-gray-200">
                         Soy{' '}
-                        <span className="text-violet-500">
+                        <span className="text-violet-400">
                            Alfonso González
                         </span>
                      </p>
-                     <p className="mt-4 text-lg text-gray-300 font-normal">
+
+                     <p className="max-w-xl text-lg leading-relaxed text-gray-400">
                         Desarrollador web enfocado en crear interfaces modernas,
-                        fluidas y con atención al detalle. Me apasiona construir
-                        experiencias digitales limpias, dinámicas y bien
-                        pensadas.
+                        fluidas y con atención al detalle.
                      </p>
+
                      <div className="socials-container flex gap-6 mt-6 text-lg">
                         <a
                            href="https://www.linkedin.com/in/alfonso-gonzalez-desarrollador/"
