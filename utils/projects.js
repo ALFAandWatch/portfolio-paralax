@@ -36,7 +36,7 @@ export const projects = [
       description:
          'Este proyecto surgió como una idea que propuse en mi trabajo en SportRadar: una librería organizada de enlaces a tickers deportivos. Comenzó en HTML y PHP y luego lo reconstruí con React. Actualmente, el frontend está en Vercel y el backend en Koyeb con base de datos en Supabase.',
       image: '/sportTickers.png',
-      link: 'https://sport-tickers-j9k5.vercel.app/',
+      link: 'https://sportstickers-supabase.vercel.app/',
       inProgress: false,
    },
    {
