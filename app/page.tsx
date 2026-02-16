@@ -1,3 +1,5 @@
+'use client';
+
 import Seccion2 from '@/components/Seccion2/Seccion2';
 import Image from 'next/image';
 import StackCard from '@/components/StackCard/StackCard';
@@ -9,8 +11,23 @@ import { backStack } from '@/utils/backStack';
 import { frontStack } from '@/utils/frontStack';
 import { projects } from '@/utils/projects';
 import { contacto } from '@/utils/contacto';
+import { useState } from 'react';
+import ProjectModal from '@/components/ProjectModal/ProjectModal';
 
 export default function Home() {
+   const [selectedProject, setSelectedProject] = useState(null);
+   const [isModalOpen, setIsModalOpen] = useState(false);
+
+   const openModal = (project: any) => {
+      setSelectedProject(project);
+      setIsModalOpen(true);
+   };
+
+   const closeModal = () => {
+      setIsModalOpen(false);
+      setSelectedProject(null);
+   };
+
    return (
       <main className="main-container relative">
          <div className="parallax-container-1">
@@ -140,11 +157,22 @@ export default function Home() {
                      Algunos Proyectos
                   </h2>
                </div>
+
                <div className="grid grid-cols-3 gap-16 p-10">
                   {projects.map((project, i) => (
-                     <ProjectCard key={i} project={project} />
+                     <ProjectCard
+                        key={i}
+                        project={project}
+                        onClick={() => openModal(project)}
+                     />
                   ))}
                </div>
+
+               <ProjectModal
+                  isOpen={isModalOpen}
+                  onClose={closeModal}
+                  project={selectedProject}
+               />
             </section>
             <div className="h-[5vh] w-full relative fondo-segundo-slide bg-black">
                <Image

@@ -1,60 +1,68 @@
 'use client';
 import Image from 'next/image';
-import Link from 'next/link';
 
 interface ProjectProps {
    project: {
       title: string;
-      description: string;
+      shortDescription: string;
+      fullDescription: string;
       image: string;
       link: string;
       inProgress: boolean;
+      featured?: boolean;
    };
+   onClick: () => void;
 }
 
-const ProjectCard = ({ project }: ProjectProps) => {
-   const { title, description, image, link, inProgress } = project;
-   return (
-      <Link
-         href={link ? link : '#'}
-         {...(link ? {} : { onClick: (e) => e.preventDefault() })}
-         {...(link ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-         className={`relative rounded-xl shadow-md overflow-hidden h-100 flex flex-col brightness-70 hover:brightness-105 hover:cursor-pointer hover:shadow-xl hover:shadow-white/20 ${
-            inProgress ? 'border-2 border-yellow-500' : ''
-         }`}
-      >
-         {inProgress && (
-            <div className="absolute bg-yellow-500 px-10 py-1 z-1 w-full flex justify-center items-center gap-2">
-               <p className=" text-black text-sm font-bold text-center">
-                  En Progreso
-               </p>
+const ProjectCard = ({ project, onClick }: ProjectProps) => {
+   const { title, shortDescription, image, inProgress, featured } = project;
 
-               <Image
-                  src="/construccion.svg"
-                  alt="En Progreso"
-                  width={24}
-                  height={24}
-               />
-            </div>
-         )}
-         <div className="relative min-h-1/2">
+   return (
+      <div
+         onClick={onClick}
+         className={`group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 bg-black border 
+                     ${featured ? 'border-cyan-400 shadow-[0_0_25px_rgba(34,211,238,0.6)]' : 'border-zinc-800 shadow-[0_0_20px_rgba(255,255,255,0.08)]'}
+                     hover:border-white/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/10`}
+      >
+         <div className="relative h-60 overflow-hidden">
             <Image
                src={image}
                alt={title}
                fill
                sizes="100vw"
-               className="w-full object-cover object-center"
+               className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
+            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-500" />
          </div>
-         <div className="p-4 h-1/2 mt-auto flex flex-col justify-around cardTitleGradient">
-            <h3 className="text-lg font-semibold mb-2 text-white text-center">
+
+         {featured && (
+            <div className="absolute top-4 right-4 z-20 bg-cyan-400/20 text-cyan-300 text-xs font-semibold px-4 py-1 rounded-full border border-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)] backdrop-blur-sm">
+               PROYECTO DESTACADO
+            </div>
+         )}
+
+         {inProgress && (
+            <div className="absolute top-4 left-4 z-10 bg-yellow-400 text-black text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+               En progreso
+            </div>
+         )}
+
+         <div className="p-6 bg-gradient-to-b from-zinc-900 to-black flex flex-col h-full">
+            <h3 className="text-2xl font-semibold text-white text-center mb-4">
                {title}
             </h3>
-            <p className="text-white text-sm text-center font-semibold">
-               {description}
+
+            <p className="text-md text-zinc-400 text-center leading-relaxed grow">
+               {shortDescription}
             </p>
+
+            <div className="mt-5 flex justify-center">
+               <span className="text-xs tracking-widest text-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  VER DETALLES →
+               </span>
+            </div>
          </div>
-      </Link>
+      </div>
    );
 };
 

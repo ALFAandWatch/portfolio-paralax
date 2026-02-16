@@ -1,0 +1,83 @@
+'use client';
+
+import Image from 'next/image';
+import { useEffect } from 'react';
+
+interface ProjectModalProps {
+   isOpen: boolean;
+   onClose: () => void;
+   project: {
+      title: string;
+      shortDescription: string;
+      fullDescription: string;
+      image: string;
+      link: string;
+      inProgress: boolean;
+      featured?: boolean;
+   } | null;
+}
+
+const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
+   useEffect(() => {
+      document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+   }, [isOpen]);
+
+   if (!isOpen || !project) return null;
+
+   return (
+      <div className="fixed inset-0 z-500 flex items-center justify-center px-4">
+         {/* Overlay */}
+         <div
+            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+            onClick={onClose}
+         />
+
+         {/* Modal */}
+         <div className="relative bg-zinc-900 rounded-2xl w-full max-w-2xl p-8 z-10 shadow-[0_0_40px_rgba(255,255,255,0.08)] border border-white/10">
+            {/* Botón cerrar */}
+            <button
+               onClick={onClose}
+               className="absolute top-5 right-5 text-white/70 hover:text-white transition text-xl"
+            >
+               ✕
+            </button>
+
+            {/* Imagen */}
+            <div className="w-full flex justify-center mb-10 mt-4">
+               <div className="relative w-full max-w-lg h-64">
+                  <Image
+                     src={project.image}
+                     alt={project.title}
+                     fill
+                     className="object-contain"
+                  />
+               </div>
+            </div>
+
+            {/* Contenido */}
+            <div className="flex flex-col items-center text-center gap-6 max-w-xl mx-auto">
+               <h3 className="text-2xl font-bold text-white">
+                  {project.title}
+               </h3>
+
+               <p className="text-zinc-300 leading-relaxed">
+                  {project.fullDescription}
+               </p>
+
+               {project.link && (
+                  <a
+                     href={project.link}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="mt-2 bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
+                  >
+                     Visitar sitio
+                  </a>
+               )}
+            </div>
+         </div>
+      </div>
+   );
+};
+
+export default ProjectModal;
