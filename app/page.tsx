@@ -55,7 +55,7 @@ export default function Home() {
                         />
                      </div>
                   </div>
-                  <div className="w-1/2 h-full flex flex-col justify-center mx-20 gap-4">
+                  <div className="w-1/2 h-full flex flex-col justify-center px-10 gap-4">
                      <h1 className="text-7xl font-extrabold tracking-tight text-white">
                         Hello World<span className="text-violet-500">.</span>
                      </h1>
@@ -112,7 +112,7 @@ export default function Home() {
                   alt="wave"
                   fill
                   sizes="5vh"
-                  className="ml-70 object-cover z-10"
+                  className="object-cover z-10 object-center"
                />
             </div>
             <section className="section-container fondo-seccion-2 relative z-10">
