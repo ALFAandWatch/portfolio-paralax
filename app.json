@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "7b0c86c9-f3d8-4bcb-996c-087ecb6b4cdc"
+      }
+    },
+    "android": {
+      "package": "com.alfaandwatch.miportfolio3"
+    }
+  }
+}

@@ -14,6 +14,9 @@ interface ProjectModalProps {
       link: string;
       inProgress: boolean;
       featured?: boolean;
+      stack: string[];
+      video?: string;
+      apk?: string;
    } | null;
 }
 
@@ -45,12 +48,20 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
             {/* Imagen */}
             <div className="w-full flex justify-center mb-10 mt-4">
                <div className="relative w-full max-w-lg h-64">
-                  <Image
-                     src={project.image}
-                     alt={project.title}
-                     fill
-                     className="object-contain"
-                  />
+                  {project.video ? (
+                     <video
+                        src={project.video}
+                        controls
+                        className="w-full h-full object-contain rounded-lg"
+                     />
+                  ) : (
+                     <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-contain"
+                     />
+                  )}
                </div>
             </div>
 
@@ -60,9 +71,33 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                   {project.title}
                </h3>
 
+               {/* Stack */}
+               <div className="flex flex-wrap justify-center gap-2 my-4">
+                  {project.stack.map((tech) => (
+                     <span
+                        key={tech}
+                        className="text-xs px-3 py-1 rounded-full bg-white/10 text-white/80 border border-white/10"
+                     >
+                        {tech}
+                     </span>
+                  ))}
+               </div>
+
                <p className="text-zinc-300 leading-relaxed">
                   {project.fullDescription}
                </p>
+
+               {project?.apk && (
+                  <a
+                     href={project.apk}
+                     download
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition"
+                  >
+                     Descargar APK
+                  </a>
+               )}
 
                {project.link && (
                   <a

@@ -10,12 +10,14 @@ interface ProjectProps {
       link: string;
       inProgress: boolean;
       featured?: boolean;
+      stack: string[];
    };
    onClick: () => void;
 }
 
 const ProjectCard = ({ project, onClick }: ProjectProps) => {
-   const { title, shortDescription, image, inProgress, featured } = project;
+   const { title, shortDescription, image, inProgress, featured, stack } =
+      project;
 
    return (
       <div
@@ -51,6 +53,18 @@ const ProjectCard = ({ project, onClick }: ProjectProps) => {
             <h3 className="text-2xl font-semibold text-white text-center mb-4">
                {title}
             </h3>
+
+            {/* Stack */}
+            <div className="flex flex-wrap justify-center gap-2 my-4">
+               {stack.map((tech) => (
+                  <span
+                     key={tech}
+                     className="text-xs px-3 py-1 rounded-full bg-white/10 text-white/80 border border-white/10"
+                  >
+                     {tech}
+                  </span>
+               ))}
+            </div>
 
             <p className="text-md text-zinc-400 text-center leading-relaxed grow">
                {shortDescription}
