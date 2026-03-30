@@ -21,7 +21,7 @@ export const projects = [
       featured: true,
       stack: ['React Native', 'Expo', 'JavaScript'],
       video: '/videos/clima-app.mp4',
-      apk: 'https://github.com/ALFAandWatch/clima-app/releases/download/v1.0.0/clima-app.apk',
+      apk: 'https://github.com/ALFAandWatch/clima-app/releases/download/v1.1.0/clima-app.apk',
    },
    {
       title: 'Primeros Paso',
