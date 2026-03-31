@@ -46,7 +46,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
             </button>
 
             {/* Imagen */}
-            <div className="w-full flex justify-center mb-10 mt-4">
+            <div className="w-full flex justify-center m-0 lg:mb-10 lg:mt-4">
                <div className="relative w-full max-w-lg h-64">
                   {project.video ? (
                      <video

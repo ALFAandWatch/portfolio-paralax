@@ -33,11 +33,11 @@ export default function Home() {
          <div className="parallax-container-1">
             {/* SECTION 1 */}
             <section className="section-container fondo-seccion-1 sticky top-0 z-1 bg-black">
-               <div className="w-full h-screen flex">
-                  <div className="w-1/2 h-full flex items-center justify-end">
+               <div className="w-full h-screen flex flex-col md:flex-row">
+                  <div className="w-screen lg:w-1/2 h-2/3 lg:h-full flex items-start lg:items-center justify-end px-0 lg:px-10">
                      <div
                         className="
-                                       foto-perfil-card relative w-3/4 h-3/4
+                                       foto-perfil-card relative w-full lg:w-3/4 h-3/4 mt-14 mx-14 lg:mx-0
                                        rounded-3xl
                                        bg-white/5 backdrop-blur-xl
                                        border border-white/10
@@ -51,16 +51,16 @@ export default function Home() {
                            alt="Alfonso Gonzalez"
                            fill
                            sizes="50vw"
-                           className="object-cover hover:brightness-120 transition-all duration-800 ease-in-out"
+                           className="object-contain lg:object-cover hover:brightness-120 transition-all duration-800 ease-in-out"
                         />
                      </div>
                   </div>
-                  <div className="w-1/2 h-full flex flex-col justify-center px-10 gap-4">
-                     <h1 className="text-7xl font-extrabold tracking-tight text-white">
+                  <div className="w-screen lg:w-1/2 h-full flex flex-col lg:justify-center mt-15 px-5 lg:px-10 gap-4">
+                     <h1 className="text-4xl lg:text-7xl font-extrabold tracking-tight text-white">
                         Hello World<span className="text-violet-500">.</span>
                      </h1>
 
-                     <p className="text-5xl font-semibold text-gray-200">
+                     <p className="text-3xl lg:text-5xl font-semibold text-gray-200">
                         Soy{' '}
                         <span className="text-violet-400">
                            Alfonso González
@@ -72,7 +72,7 @@ export default function Home() {
                         fluidas y con atención al detalle.
                      </p>
 
-                     <div className="socials-container flex gap-6 mt-6 text-lg">
+                     <div className="socials-container flex gap-2 lg:gap-6 mt-6 text-lg">
                         <a
                            href="https://www.linkedin.com/in/alfonso-gonzalez-desarrollador/"
                            target="_blank"
@@ -116,13 +116,15 @@ export default function Home() {
                />
             </div>
             <section className="section-container fondo-seccion-2 relative z-10">
-               <div className="w-full h-full flex p-10">
-                  <div className="w-1/2 flex flex-col gap-4">
-                     <h2 className="text-5xl text-gray-200 font-bold">
+               <div className="w-full h-full flex p-5 lg:p-10 mt-20 lg:m-0">
+                  <div className="w-full lg:w-1/2 flex flex-col gap-4">
+                     <h2 className="text-4xl lg:text-5xl text-gray-200 font-bold">
                         Tech Stack
                      </h2>
-                     <h3 className="text-3xl text-gray-200">Front-End()</h3>
-                     <div className="flex flex-wrap gap-3">
+                     <h3 className="text-2xl lg:text-3xl text-gray-200 text-center lg:text-left">
+                        Front-End()
+                     </h3>
+                     <div className="grid grid-cols-4 lg:flex flex-wrap gap-3 lg:gap-3">
                         {frontStack.map((item) => (
                            <StackCard
                               key={item.name}
@@ -131,8 +133,10 @@ export default function Home() {
                            />
                         ))}
                      </div>
-                     <h3 className="text-3xl text-gray-200">Back-End()</h3>
-                     <div className="flex flex-wrap gap-3">
+                     <h3 className="text-2xl lg:text-3xl text-gray-200 text-center lg:text-left">
+                        Back-End()
+                     </h3>
+                     <div className="grid grid-cols-4 lg:flex flex-wrap gap-3 lg:gap-3">
                         {backStack.map((item) => (
                            <StackCard
                               key={item.name}
@@ -142,7 +146,7 @@ export default function Home() {
                         ))}
                      </div>
                   </div>
-                  <div className="w-1/2 text-5xl text-gray-200">
+                  <div className="w-1/2 text-5xl text-gray-200 hidden lg:block">
                      <h2 className="font-bold">Algunos de mis hobbies.</h2>
                      <Seccion2 />
                   </div>
@@ -158,7 +162,7 @@ export default function Home() {
                   </h2>
                </div>
 
-               <div className="grid grid-cols-3 gap-16 p-10">
+               <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 p-10">
                   {projects.map((project, i) => (
                      <ProjectCard
                         key={i}
@@ -184,12 +188,19 @@ export default function Home() {
                />
             </div>
             <section className="last-container overflow-hidden bg-black fondo-seccion-4 sticky bottom-0 z-2">
-               <h2 className="text-5xl text-gray-200 font-bold text-center py-15">
+               <h2 className="text-3xl lg:text-5xl text-gray-200 font-bold text-center py-7 lg:py-15">
                   Contacto
                </h2>
-               <div className="flex flex-nowrap justify-center gap-5">
-                  {contacto.map((contacto, i) => (
-                     <ContactoCard key={i} contacto={contacto} />
+               <div className="grid grid-cols-2 lg:flex lg:flex-nowrap justify-center gap-3 lg:gap-10">
+                  {contacto.map((item, i) => (
+                     <div
+                        key={i}
+                        className={
+                           i === contacto.length - 1 ? 'col-span-2' : ''
+                        }
+                     >
+                        <ContactoCard contacto={item} />
+                     </div>
                   ))}
                </div>
             </section>
