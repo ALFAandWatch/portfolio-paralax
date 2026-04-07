@@ -11,6 +11,18 @@ export const projects = [
       stack: ['NextJs', 'Node.js', 'Express', 'PostgreSQL'],
    },
    {
+      title: 'App Fitness con integracion de IA',
+      shortDescription:
+         'Aplicación móvil de fitness que permite crear rutinas, registrar entrenamientos y seguir tu progreso con sugerencias automáticas.',
+      fullDescription:
+         'Esta app te ayuda a organizar tus rutinas de entrenamiento y registrar cada sesión con peso y repeticiones. A partir de tu historial, calcula métricas clave como volumen y progreso, y ofrece recomendaciones de carga para mejorar tu rendimiento de forma continua.',
+      image: '/thumbnails/fitness-ai-app.png',
+      link: '',
+      inProgress: true,
+      featured: false,
+      stack: ['React Native', 'Expo', 'JavaScript'],
+   },
+   {
       title: 'App de Clima',
       shortDescription: 'Aplicación de pronóstico del tiempo.',
       fullDescription:
