@@ -11,6 +11,18 @@ export const projects = [
       stack: ['NextJs', 'Node.js', 'Express', 'PostgreSQL'],
    },
    {
+      title: 'NeuroFlow',
+      shortDescription:
+         'Landing page tipo SaaS que presenta una plataforma de automatización con IA mediante una demo interactiva y enfoque en UX moderna.',
+      fullDescription:
+         'Landing page inspirada en productos SaaS que simula una plataforma de automatización impulsada por inteligencia artificial. Incluye una demo interactiva con navegación por tabs, animaciones y visualización de métricas para transmitir cómo funcionaría el producto en un entorno real. El foco está en la experiencia de usuario, la claridad del mensaje y un diseño moderno orientado a conversión. Desarrollada con Next.js, Tailwind y Framer Motion.',
+      image: '/thumbnails/NeuroFlow.png',
+      link: 'https://neuro-flow-two.vercel.app/',
+      inProgress: false,
+      featured: true,
+      stack: ['Next.js', 'Framer Motion', 'TailwindCSS'],
+   },
+   {
       title: 'App Fitness con integracion de IA',
       shortDescription:
          'Aplicación móvil de fitness que permite crear rutinas, registrar entrenamientos y seguir tu progreso con sugerencias automáticas.',
