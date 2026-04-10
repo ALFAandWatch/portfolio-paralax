@@ -60,7 +60,9 @@ body {
 
 .foto-perfil-card {
    border-radius: 1rem 15rem 1rem 15rem;
-   transition: transform 0.8s ease-in-out, background-color 0.8s ease-in-out,
+   transition:
+      transform 0.8s ease-in-out,
+      background-color 0.8s ease-in-out,
       filter 0.8s ease-in-out;
 }
 .foto-perfil-card:hover {

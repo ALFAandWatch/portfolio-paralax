@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Poppins, Instrument_Sans } from 'next/font/google';
 import '@/styles/reset.css';
 import './globals.css';
+import SmoothScroll from '@/components/SmoothScroll/SmoothScroll';
 
 const poppins = Poppins({
    subsets: ['latin'],
