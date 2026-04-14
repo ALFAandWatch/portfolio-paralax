@@ -11,4 +11,8 @@ export const backStack = [
       name: 'REST API',
       url: '/stacks/restApi.png',
    },
+   {
+      name: 'Supabase',
+      url: '/stacks/supabase.jpeg',
+   },
 ];

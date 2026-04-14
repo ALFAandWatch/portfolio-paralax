@@ -32,9 +32,9 @@ const ProjectCard = ({ project, onClick }: ProjectProps) => {
                alt={title}
                fill
                sizes="100vw"
-               className="object-cover transition-transform duration-700 group-hover:scale-110"
+               className="object-cover transform scale-100 transition-transform duration-1500 ease-out will-change-transform group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-500" />
+            <div className="absolute inset-0 bg-black/0 dark:bg-black/40 group-hover:bg-black/0 dark:group-hover:bg-black/30 transition-all duration-500 pointer-events-none" />
          </div>
 
          {featured && (
@@ -49,8 +49,8 @@ const ProjectCard = ({ project, onClick }: ProjectProps) => {
             </div>
          )}
 
-         <div className="p-6 bg-gradient-to-b from-zinc-900 to-black flex flex-col h-full">
-            <h3 className="text-2xl font-semibold text-white text-center mb-4">
+         <div className="p-6 bg-gradient-to-b bg-zinc-50 dark:bg-zinc-900 flex flex-col h-full">
+            <h3 className="text-2xl font-semibold text-gray-600 dark:text-gray-100 text-center mb-4">
                {title}
             </h3>
 
@@ -59,14 +59,14 @@ const ProjectCard = ({ project, onClick }: ProjectProps) => {
                {stack.map((tech) => (
                   <span
                      key={tech}
-                     className="text-xs px-3 py-1 rounded-full bg-white/10 text-white/80 border border-white/10"
+                     className="text-xs px-3 py-1 rounded-full bg-gray-600/20 dark:bg-white/10 text-gray-600 dark:text-gray-100/80 border border-gray-600 dark:border-white/10"
                   >
                      {tech}
                   </span>
                ))}
             </div>
 
-            <p className="text-md text-zinc-400 text-center leading-relaxed grow">
+            <p className="text-md text-gray-600 dark:text-gray-100 text-center leading-relaxed grow">
                {shortDescription}
             </p>
 

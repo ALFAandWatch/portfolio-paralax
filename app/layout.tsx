@@ -3,6 +3,7 @@ import { Poppins, Instrument_Sans } from 'next/font/google';
 import '@/styles/reset.css';
 import './globals.css';
 import SmoothScroll from '@/components/SmoothScroll/SmoothScroll';
+import ThemeToggle from '@/components/ThemeToggle/ThemeToggle';
 
 const poppins = Poppins({
    subsets: ['latin'],
@@ -27,8 +28,9 @@ export default function RootLayout({
    children: React.ReactNode;
 }>) {
    return (
-      <html lang="es">
+      <html lang="es" className="dark">
          <body className={`${instrumentSans.className} antialiased`}>
+            <ThemeToggle />
             {children}
          </body>
       </html>

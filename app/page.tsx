@@ -82,7 +82,7 @@ export default function Home() {
       <main className="main-container relative">
          <div className="parallax-container-1">
             {/* SECTION 1 */}
-            <section className="section-container fondo-seccion-1 sticky top-0 z-1 bg-black">
+            <section className="section-container fondo-seccion-1 sticky top-0 z-1 dark:bg-black">
                <motion.div
                   className="w-full h-screen flex flex-col md:flex-row"
                   initial={{ opacity: 0, y: 40 }}
@@ -96,8 +96,10 @@ export default function Home() {
                                        rounded-3xl
                                        bg-white/5 backdrop-blur-xl
                                        border border-white/10
-                                       shadow-[0_20px_60px_rgba(139,92,246,0.35)]
-                                       hover:shadow-[0_30px_80px_rgba(139,92,246,0.55)]
+                                       dark:shadow-[0_20px_60px_rgba(139,92,246,0.35)]
+                                       shadow-[0_20px_60px_rgba(5,150,105,0.35)]
+                                       dark:hover:shadow-[0_30px_80px_rgba(139,92,246,0.55)]
+                                       hover:shadow-[0_30px_80px_rgba(5,150,105,0.55)]
                                        transition-all duration-500
                                        "
                      >
@@ -111,14 +113,20 @@ export default function Home() {
                      </div>
                   </div>
                   <div className="w-screen lg:w-1/2 h-full flex flex-col lg:justify-center mt-15 px-5 lg:px-10 gap-4">
-                     <h1 className="text-4xl lg:text-7xl font-extrabold tracking-tight text-white">
-                        Hello World<span className="text-violet-500">.</span>
+                     <h1 className="text-4xl lg:text-7xl font-extrabold tracking-tight text-gray-600 dark:text-gray-100">
+                        Full Stack Developer{' '}
+                        <span className="text-[#059669] dark:text-violet-500">
+                           / Frontend Focus
+                        </span>
+                        <span className="text-[#059669] dark:text-violet-500">
+                           .
+                        </span>
                      </h1>
 
-                     <p className="text-3xl lg:text-5xl font-semibold text-gray-200">
+                     <p className="text-2xl lg:text-4xl font-medium text-gray-600 dark:text-gray-100">
                         Soy{' '}
                         <motion.span
-                           className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#22D3EE]"
+                           className="text-transparent bg-clip-text bg-gradient-to-r from-[#6D28D9] to-[#0E7490] dark:from-[#8B5CF6] dark:to-[#22D3EE]"
                            initial={{ opacity: 0 }}
                            animate={{ opacity: 1 }}
                            transition={{ duration: 0.8, delay: 0.3 }}
@@ -127,7 +135,7 @@ export default function Home() {
                         </motion.span>
                      </p>
 
-                     <p className="max-w-xl text-lg leading-relaxed text-gray-400">
+                     <p className="max-w-xl text-lg leading-relaxed text-gray-600 dark:text-gray-300">
                         Desarrollador web enfocado en crear interfaces modernas,
                         fluidas y con atención al detalle.
                      </p>
@@ -139,7 +147,7 @@ export default function Home() {
                         animate="show"
                      >
                         <motion.a
-                           className="w-12 h-12 hover:bg-violet-500 flex justify-center items-center rounded-full transition-colors duration-300"
+                           className="w-12 h-12 hover:bg-[#059669] dark:hover:bg-violet-500 flex justify-center items-center rounded-full transition-colors duration-300"
                            href="https://www.linkedin.com/in/alfonso-gonzalez-desarrollador/"
                            target="_blank"
                            variants={item}
@@ -149,13 +157,13 @@ export default function Home() {
                               alt="InBug"
                               width={30}
                               height={30}
-                              className="inline-block"
+                              className="inline-block invert dark:invert-0"
                            />
                         </motion.a>
                         <motion.a
                            href="https://github.com/ALFAandWatch"
                            target="_blank"
-                           className="w-12 h-12 hover:bg-violet-500 flex justify-center items-center rounded-full transition-colors duration-300"
+                           className="w-12 h-12 hover:bg-[#059669] dark:hover:bg-violet-500 flex justify-center items-center rounded-full transition-colors duration-300"
                            variants={item}
                         >
                            <Image
@@ -163,7 +171,7 @@ export default function Home() {
                               alt="GitHub"
                               width={30}
                               height={30}
-                              className="inline-block"
+                              className="inline-block invert dark:invert-0"
                            />
                         </motion.a>
                         <CVButton />
@@ -171,17 +179,8 @@ export default function Home() {
                   </div>
                </motion.div>
             </section>
-            {/* SECTION 2 */}
 
-            <div className="h-[5vh] w-full relative bg-black">
-               <Image
-                  src="/violetSlide.svg"
-                  alt="wave"
-                  fill
-                  sizes="5vh"
-                  className="object-cover z-10 object-center"
-               />
-            </div>
+            {/* SECTION 2 */}
             <section className="section-container fondo-seccion-2 relative z-10">
                <div className="w-full h-full flex p-5 lg:p-10 mt-20 lg:m-0">
                   <div className="w-full lg:w-1/2 flex flex-col gap-4">
@@ -230,9 +229,9 @@ export default function Home() {
          </div>
          <div className="parallax-container-2">
             {/* SECTION 3 */}
-            <section className="section-container-fluid fondo-seccion-3 bg-black relative z-200">
+            <section className="section-container-fluid fondo-seccion-3 relative z-200 pt-15">
                <div>
-                  <h2 className="font-bold text-5xl text-center text-white">
+                  <h2 className="font-bold text-5xl text-center text-gray-600 dark:text-gray-100">
                      Algunos Proyectos
                   </h2>
                </div>
@@ -264,17 +263,9 @@ export default function Home() {
                   project={selectedProject}
                />
             </section>
-            <div className="h-[5vh] w-full relative fondo-segundo-slide bg-black">
-               <Image
-                  src="/blackSlide.svg"
-                  alt="wave"
-                  fill
-                  sizes="5vh"
-                  className="-ml-70 object-cover z-10"
-               />
-            </div>
-            <section className="last-container overflow-hidden bg-black fondo-seccion-4 sticky bottom-0 z-2">
-               <h2 className="text-3xl lg:text-5xl text-gray-200 font-bold text-center py-7 lg:py-15">
+            {/* SECTION 4 */}
+            <section className="last-container overflow-hidden fondo-seccion-4 sticky bottom-0 z-2">
+               <h2 className="text-3xl lg:text-5xl text-gray-600 dark:text-gray-100 font-bold text-center py-7 lg:py-15">
                   Contacto
                </h2>
                <div className="grid grid-cols-2 lg:flex lg:flex-nowrap justify-center gap-3 lg:gap-10">

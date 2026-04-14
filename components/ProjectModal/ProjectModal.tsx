@@ -36,11 +36,11 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
          />
 
          {/* Modal */}
-         <div className="relative bg-zinc-900 rounded-2xl w-full max-w-2xl p-8 z-10 shadow-[0_0_40px_rgba(255,255,255,0.08)] border border-white/10">
+         <div className="relative bg-[rgb(225,245,235)] dark:bg-zinc-900 rounded-2xl w-full max-w-2xl p-8 z-10 shadow-[0_0_40px_rgba(255,255,255,0.08)] border border-white/10">
             {/* Botón cerrar */}
             <button
                onClick={onClose}
-               className="absolute top-5 right-5 text-white/70 hover:text-white transition text-xl"
+               className="absolute top-5 right-5 text-white/70 hover:text-white transition text-xl invert dark:invert-0"
             >
                ✕
             </button>
@@ -67,7 +67,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
 
             {/* Contenido */}
             <div className="flex flex-col items-center text-center gap-6 max-w-xl mx-auto">
-               <h3 className="text-2xl font-bold text-white">
+               <h3 className="text-2xl font-bold text-gray-600 dark:text-gray-100">
                   {project.title}
                </h3>
 
@@ -76,14 +76,14 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                   {project.stack.map((tech) => (
                      <span
                         key={tech}
-                        className="text-xs px-3 py-1 rounded-full bg-white/10 text-white/80 border border-white/10"
+                        className="text-xs px-3 py-1 rounded-full  bg-gray-600/20 dark:bg-white/10 text-gray-600 dark:text-white/80 border border-gray-600 dark:border-white/10"
                      >
                         {tech}
                      </span>
                   ))}
                </div>
 
-               <p className="text-zinc-300 leading-relaxed">
+               <p className="text-gray-600 dark:text-gray-100 leading-relaxed">
                   {project.fullDescription}
                </p>
 
@@ -93,7 +93,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
                      download
                      target="_blank"
                      rel="noopener noreferrer"
-                     className="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition"
+                     className="mt-4 inline-block px-4 py-2 bg-blue-600 text-gray-600 dark:text-gray-100 rounded-lg text-sm hover:bg-blue-700 transition"
                   >
                      Descargar APK
                   </a>

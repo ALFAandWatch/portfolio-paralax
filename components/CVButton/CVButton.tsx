@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { delay, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const CVButton = () => {
    const container = {
@@ -29,7 +29,7 @@ const CVButton = () => {
             href="/resume_Alfonso_Gonzalez_Fullstack_Developer.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-auto h-10 lg:h-12 px-3 lg:px-5 text-gray-300 text-xs text-nowrap font-extrabold border border-gray-300 hover:bg-violet-500 flex justify-center items-center rounded-full transition-colors duration-300 gap-0 lg:gap-2"
+            className="w-auto h-10 lg:h-12 px-3 lg:px-5 text-gray-600 dark:text-gray-300 text-xs text-nowrap font-extrabold border border-gray-600 dark:border-gray-300 hover:bg-[#059669] dark:hover:bg-violet-500 flex justify-center items-center rounded-full transition-colors duration-300 gap-0 lg:gap-2"
             variants={item}
          >
             Mi CV (ES)
@@ -38,14 +38,14 @@ const CVButton = () => {
                alt="Descargar CV"
                width={30}
                height={30}
-               className="inline-block ps-2 lg:p-0"
+               className="inline-block ps-2 lg:p-0 invert dark:invert-0"
             />
          </motion.a>
          <motion.a
             href="/resume_Alfonso_Gonzalez_Fullstack_Developer_(ENG).pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-auto h-10 lg:h-12 px-3 lg:px-5 text-gray-300 text-xs text-nowrap font-extrabold border border-gray-300 hover:bg-violet-500 flex justify-center items-center rounded-full transition-colors duration-300 gap-0 lg:gap-2"
+            className="w-auto h-10 lg:h-12 px-3 lg:px-5 text-gray-600 dark:text-gray-300 text-xs text-nowrap font-extrabold border border-gray-600 dark:border-gray-300 hover:bg-[#059669] dark:hover:bg-violet-500 flex justify-center items-center rounded-full transition-colors duration-300 gap-0 lg:gap-2"
             variants={item}
          >
             Mi CV (EN)
@@ -54,7 +54,7 @@ const CVButton = () => {
                alt="Descargar CV"
                width={30}
                height={30}
-               className="inline-block ps-2 lg:p-0"
+               className="inline-block ps-2 lg:p-0 invert dark:invert-0"
             />
          </motion.a>
       </motion.div>

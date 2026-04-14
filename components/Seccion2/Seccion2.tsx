@@ -57,10 +57,10 @@ const Seccion2 = () => {
       <div className="w-full h-full relative">
          <div
             id="div-gimnasio"
-            className="w-auto h-auto absolute top-25 right-110 -rotate-10 shadow-lg shadow-violet-700"
+            className="w-auto h-auto absolute top-25 right-110 -rotate-10 shadow-lg"
          >
             <div className="relative">
-               <h2 className="text-2xl text-gray-200 absolute top-3 -left-7 bg-gray-800 p-3 rounded-md">
+               <h2 className="text-2xl text-gray-600 dark:text-gray-100 absolute top-3 -left-7 bg-[rgb(225,245,235)] dark:bg-gray-800 p-3 rounded-md">
                   Voy al Gimnasio
                </h2>
                <Image
@@ -74,10 +74,10 @@ const Seccion2 = () => {
          </div>
          <div
             id="div-smash"
-            className="w-auto h-auto absolute top-15 right-25 rotate-12 shadow-lg shadow-violet-700"
+            className="w-auto h-auto absolute top-15 right-25 rotate-12 shadow-lg"
          >
             <div className="relative">
-               <h2 className="text-2xl text-gray-200 absolute -top-3 -left-10 -rotate-15 bg-gray-800 p-3 rounded-md">
+               <h2 className="text-2xl text-gray-600 dark:text-gray-100 absolute -top-3 -left-10 -rotate-15 bg-[rgb(225,245,235)] dark:bg-gray-800 p-3 rounded-md">
                   Fan del Smash
                </h2>
                <Image
@@ -91,10 +91,10 @@ const Seccion2 = () => {
          </div>
          <div
             id="div-slipknot"
-            className="w-auto h-auto absolute top-60 right-50 shadow-lg shadow-violet-700"
+            className="w-auto h-auto absolute top-60 right-50 shadow-lg"
          >
             <div className="relative">
-               <h2 className="text-2xl text-gray-200 absolute -bottom-3 -left-10 -rotate-7 bg-gray-800 p-3 rounded-md">
+               <h2 className="text-2xl text-gray-600 dark:text-gray-100 absolute -bottom-3 -left-10 -rotate-7 bg-[rgb(225,245,235)] dark:bg-gray-800 p-3 rounded-md">
                   Escucho buen metal
                </h2>
                <Image
