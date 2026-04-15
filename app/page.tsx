@@ -15,6 +15,7 @@ import { useState } from 'react';
 import ProjectModal from '@/components/ProjectModal/ProjectModal';
 
 import { motion } from 'framer-motion';
+import { useVisits } from '@/hooks/useVisits';
 
 export default function Home() {
    const [selectedProject, setSelectedProject] = useState(null);
@@ -34,6 +35,8 @@ export default function Home() {
    for (let i = 0; i < projects.length; i += 3) {
       rows.push(projects.slice(i, i + 3));
    }
+
+   const visits = useVisits();
 
    const container = {
       hidden: {},
@@ -138,6 +141,9 @@ export default function Home() {
                      <p className="max-w-xl text-lg leading-relaxed text-gray-600 dark:text-gray-300">
                         Desarrollador web enfocado en crear interfaces modernas,
                         fluidas y con atención al detalle.
+                     </p>
+                     <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                        👀 {visits} visitas
                      </p>
 
                      <motion.div

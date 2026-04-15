@@ -31,7 +31,7 @@ const ProjectCard = ({ project, onClick }: ProjectProps) => {
                src={image}
                alt={title}
                fill
-               sizes="100vw"
+               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                className="object-cover transform scale-100 transition-transform duration-1500 ease-out will-change-transform group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black/0 dark:bg-black/40 group-hover:bg-black/0 dark:group-hover:bg-black/30 transition-all duration-500 pointer-events-none" />
