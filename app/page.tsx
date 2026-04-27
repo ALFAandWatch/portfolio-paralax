@@ -142,7 +142,7 @@ export default function Home() {
                         Desarrollador web enfocado en crear interfaces modernas,
                         fluidas y con atención al detalle.
                      </p>
-                     <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                     <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 opacity-0 hover:opacity-100 transition duration-75">
                         👀 {visits} visitas
                      </p>
 
