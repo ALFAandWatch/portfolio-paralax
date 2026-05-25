@@ -40,19 +40,6 @@ export const useVisits = () => {
 
          // 👇 si no incrementa, mostramos valor actual
          setVisits(data.count);
-
-         // 👇 2. Incrementar SOLO una vez por usuario
-         if (!localStorage.getItem(key)) {
-            const { error: updateError } = await supabase
-               .from('visits')
-               .update({ count: data.count + 1 })
-               .eq('id', 1);
-
-            if (!updateError) {
-               localStorage.setItem(key, 'true');
-               setVisits((prev) => prev + 1); // feedback inmediato
-            }
-         }
       };
 
       fetchVisits();

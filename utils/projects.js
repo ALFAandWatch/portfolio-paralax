@@ -1,16 +1,5 @@
 export const projects = [
    {
-      title: 'Proyecto SOLES',
-      shortDescription: 'Pagina de ayuda comunitaria.',
-      fullDescription:
-         'Proyecto en desarrollo orientado al bienestar comunitario y al fortalecimiento social. Actualmente en fase de análisis y planificación, con conversaciones preliminares con autoridades departamentales. Enfocado en generar impacto positivo y promover iniciativas colaborativas.',
-      image: '/thumbnails/soles.png',
-      link: '',
-      inProgress: true,
-      featured: false,
-      stack: ['NextJs', 'Node.js', 'Express', 'PostgreSQL'],
-   },
-   {
       title: 'NeuroFlow',
       shortDescription:
          'Landing page tipo SaaS que presenta una plataforma de automatización con IA mediante una demo interactiva y enfoque en UX moderna.',
@@ -21,18 +10,6 @@ export const projects = [
       inProgress: false,
       featured: true,
       stack: ['Next.js', 'Framer Motion', 'TailwindCSS'],
-   },
-   {
-      title: 'App Fitness con integracion de IA',
-      shortDescription:
-         'Aplicación móvil de fitness que permite crear rutinas, registrar entrenamientos y seguir tu progreso con sugerencias automáticas.',
-      fullDescription:
-         'Esta app te ayuda a organizar tus rutinas de entrenamiento y registrar cada sesión con peso y repeticiones. A partir de tu historial, calcula métricas clave como volumen y progreso, y ofrece recomendaciones de carga para mejorar tu rendimiento de forma continua.',
-      image: '/thumbnails/fitness-ai-app.png',
-      link: '',
-      inProgress: true,
-      featured: false,
-      stack: ['React Native', 'Expo', 'JavaScript'],
    },
    {
       title: 'App de Clima',
@@ -57,17 +34,6 @@ export const projects = [
       inProgress: false,
       featured: true,
       stack: ['NextJs', 'TailwindCSS', 'Supabase'],
-   },
-   {
-      title: 'CARNES OBRA',
-      shortDescription: 'Página Institucional.',
-      fullDescription:
-         'Sitio web institucional con diseño moderno y navegación simple, orientado a presentar información esencial de la organización y sus políticas. Incluye secciones básicas, scroll con parallax y un formulario de contacto funcional.',
-      image: '/thumbnails/carnesObra.png',
-      link: 'https://obra.uy/',
-      inProgress: false,
-      featured: false,
-      stack: ['HTML5', 'CSS', 'GSAP'],
    },
    {
       title: 'Planner.uy - Landing Page',
@@ -97,7 +63,7 @@ export const projects = [
       fullDescription:
          'Proyecto desarrollado durante mi curso, con diseño libre. Construido con Next.js (App Router) y TailwindCSS, incluye registro, login, carrito y checkout funcional. El frontend está en Vercel, el backend en Render y la base de datos en Supabase, ofreciendo una experiencia fluida y responsiva.',
       image: '/thumbnails/clickNest.png',
-      link: 'https://click-nest-frontend.vercel.app/',
+      link: 'https://clicknest-rho.vercel.app/',
       inProgress: false,
       featured: false,
       stack: ['React', 'TailwindCSS', 'Node.js', 'Express', 'PostgreSQL'],
