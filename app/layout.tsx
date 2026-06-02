@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import { Poppins, Instrument_Sans } from 'next/font/google';
 import '@/styles/reset.css';
 import './globals.css';
-import SmoothScroll from '@/components/SmoothScroll/SmoothScroll';
 import ThemeToggle from '@/components/ThemeToggle/ThemeToggle';
+import { LanguageProvider } from '@/context/LanguageContext';
+import LanguageToggle from '@/components/LanguageToggle/LanguageToggle';
 
 const poppins = Poppins({
    subsets: ['latin'],
@@ -29,9 +30,14 @@ export default function RootLayout({
 }>) {
    return (
       <html lang="es" className="dark">
-         <body className={`${instrumentSans.className} antialiased`}>
-            <ThemeToggle />
-            {children}
+         <body className={`${instrumentSans.className} antialiased relative`}>
+            <LanguageProvider>
+               <div className="flex flex-col items-center fixed top-5 right-10 gap-2 z-300">
+                  <ThemeToggle />
+                  <LanguageToggle />
+               </div>
+               {children}
+            </LanguageProvider>
          </body>
       </html>
    );

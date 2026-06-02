@@ -1,0 +1,320 @@
+type Project = {
+   id: number;
+   title: string;
+   shortDescription: string;
+   fullDescription: string;
+   image: string;
+   link: string;
+   stack: string[];
+   inProgress: boolean;
+   featured: boolean;
+   video?: string;
+   apk?: string;
+   academic?: boolean;
+};
+
+type Info = {
+   key: 'email' | 'phone' | 'location';
+   label: string;
+   value: string;
+};
+
+export type TranslationSchema = {
+   s1: {
+      introduction: string;
+      description: string;
+      cv: {
+         downloadEs: string;
+         downloadEn: string;
+      };
+   };
+   s2: {
+      hobbiesTitle: string;
+      gym: string;
+      smash: string;
+      metal: string;
+   };
+   s_extra: {
+      title: string;
+   };
+   s3: {
+      title: string;
+   };
+   s4: {
+      title: string;
+   };
+   labels: {
+      academic: string;
+      featured: string;
+      inProgress: string;
+      visit: string;
+   };
+   projects: Project[];
+   info: Info[];
+};
+
+export const translations: Record<'es' | 'en', TranslationSchema> = {
+   es: {
+      s1: {
+         introduction: 'Soy',
+         description:
+            'Desarrollador web enfocado en crear interfaces modernas fluidas y con atención al detalle.',
+         cv: {
+            downloadEs: 'Mi CV (ES)',
+            downloadEn: 'Mi CV (EN)',
+         },
+      },
+      s2: {
+         hobbiesTitle: 'Acerca de mi',
+         gym: 'Voy al Gimnasio',
+         smash: 'Fan del Smash',
+         metal: 'Escucho buen metal',
+      },
+      s_extra: {
+         title: 'Proyectos Destacados',
+      },
+      s3: {
+         title: 'Todos los Proyectos',
+      },
+      s4: {
+         title: 'Información de Contacto',
+      },
+      labels: {
+         academic: 'Proyecto Académico',
+         featured: 'Proyecto Destacado',
+         inProgress: 'En Progreso',
+         visit: 'Visitar Sitio',
+      },
+      projects: [
+         {
+            id: 1,
+            title: 'NeuroFlow',
+            shortDescription:
+               'Landing page tipo SaaS para plataforma de automatización con IA.',
+            fullDescription:
+               'Landing page inspirada en productos SaaS que simula una plataforma de automatización impulsada por inteligencia artificial. Incluye una demo interactiva con navegación por tabs, animaciones y visualización de métricas para transmitir cómo funcionaría el producto en un entorno real. El foco está en la experiencia de usuario, la claridad del mensaje y un diseño moderno orientado a conversión. Desarrollada con Next.js, Tailwind y Framer Motion.',
+            image: '/thumbnails/NeuroFlow.png',
+            link: 'https://neuro-flow-two.vercel.app/',
+            inProgress: false,
+            featured: false,
+            stack: ['Next.js', 'Framer Motion', 'TailwindCSS'],
+         },
+         {
+            id: 2,
+            title: 'App de Clima',
+            shortDescription: 'Aplicación de pronóstico del tiempo.',
+            fullDescription:
+               'Aplicación de clima desarrollada con React Native, enfocada en consultar el estado actual y pronóstico por ciudad o ubicación. Incluye búsqueda, favoritos, cambio de unidades y modo claro/oscuro, consumiendo datos en tiempo real desde una API externa.',
+            image: '/thumbnails/clima-app.png',
+            link: '',
+            inProgress: false,
+            featured: false,
+            stack: ['React Native', 'Expo', 'JavaScript'],
+            video: '/videos/clima-app.mp4',
+            apk: 'https://github.com/ALFAandWatch/clima-app/releases/download/v1.1.0/clima-app.apk',
+         },
+         {
+            id: 3,
+            title: 'Primeros Paso',
+            shortDescription: 'Incubadora de empresas.',
+
+            fullDescription:
+               'Proyecto de incubadora de empresas en etapa de desarrollo, orientado a impulsar PYMES locales y apoyar iniciativas de crecimiento económico. Actualmente en la última fase antes de su despliegue.',
+            image: '/thumbnails/primerPaso.png',
+            link: 'https://incubadora-demo.vercel.app/',
+            inProgress: false,
+            featured: false,
+            stack: ['NextJs', 'TailwindCSS', 'Supabase'],
+         },
+         {
+            id: 4,
+            title: 'Planner.uy - Landing Page',
+            shortDescription: 'Landing page.',
+            fullDescription:
+               'Colaboré con Planner en el desarrollo de productos digitales para startups y empresas, trabajando en diseño web, frontend y experiencias interactivas para convertir ideas en interfaces accesibles y visualmente atractivas.',
+            image: '/thumbnails/planner.png',
+            link: 'https://planner.uy/',
+            inProgress: false,
+            featured: false,
+            stack: ['HTML5', 'PHP', 'SASS', 'GSAP'],
+         },
+         {
+            id: 5,
+            title: 'SportTickers',
+            shortDescription: 'Librería de enlaces a tickers deportivos.',
+            fullDescription:
+               'Este proyecto surgió como una idea que propuse en mi trabajo en SportRadar, que trabaja con estadisticas deportivas y mercados de apuestas: se trata de una librería organizada de enlaces a tickers deportivos. Comenzó en HTML y PHP y luego lo reconstruí con React. Actualmente, el frontend está en Vercel y el backend en Supabase.',
+            image: '/thumbnails/sport-tickers.png',
+            link: 'https://sportstickers-supabase.vercel.app/',
+            inProgress: false,
+            featured: true,
+            stack: ['NextJs', 'TailwindCSS', 'Supabase'],
+         },
+         {
+            id: 6,
+            title: 'ClickNest - E-commerce',
+            shortDescription: 'E-commerce funcional.',
+            fullDescription:
+               'Proyecto desarrollado durante mi curso, con diseño libre. Construido con Next.js (App Router) y TailwindCSS, incluye registro, login, carrito y checkout funcional. El frontend está en Vercel, el backend en Render y la base de datos en Supabase, ofreciendo una experiencia fluida y responsiva.',
+            image: '/thumbnails/clickNest0.png',
+            link: 'https://clicknest-rho.vercel.app/',
+            inProgress: false,
+            featured: false,
+            academic: true,
+            stack: ['React', 'TailwindCSS', 'Node.js', 'Express', 'PostgreSQL'],
+         },
+      ],
+      info: [
+         {
+            key: 'email',
+            label: 'Correo Electrónico',
+            value: 'alfonso.gonzalezwebdev@gmail.com',
+         },
+         {
+            key: 'phone',
+            label: 'Teléfono',
+            value: '+59899567652',
+         },
+         {
+            key: 'location',
+            label: 'Ubicación',
+            value: 'Tarariras, Departamento de Colonia, Uruguay',
+         },
+      ],
+   },
+   // ============ EN ======================================
+   // ======================================================
+   en: {
+      s1: {
+         introduction: 'I am',
+         description:
+            'Web developer crafting modern, polished interfaces with a strong focus on detail and user experience.',
+         cv: {
+            downloadEs: 'Mi Resume (ES)',
+            downloadEn: 'Mi Resume (EN)',
+         },
+      },
+      s2: {
+         hobbiesTitle: 'Something about me',
+         gym: 'I go to the gym',
+         smash: 'Big Smash Fan',
+         metal: 'I listen to good metal music',
+      },
+      s_extra: {
+         title: 'Featured Projects',
+      },
+      s3: {
+         title: 'All Projects',
+      },
+      s4: {
+         title: 'Contact Information',
+      },
+      labels: {
+         academic: 'Academic Project',
+         featured: 'Featured Project',
+         inProgress: 'In Progress',
+         visit: 'Visit Site',
+      },
+      projects: [
+         {
+            id: 1,
+            title: 'NeuroFlow',
+            shortDescription:
+               'SaaS landing page for an AI-powered automation platform.',
+            fullDescription:
+               'A SaaS-inspired landing page that simulates an AI-powered automation platform. It features an interactive demo with tab navigation, smooth animations, and metrics visualization to showcase how the product would work in a real-world scenario. The focus is on user experience, clear messaging, and a modern, conversion-driven design. Built with Next.js, Tailwind CSS, and Framer Motion.',
+            image: '/thumbnails/NeuroFlow.png',
+            link: 'https://neuro-flow-two.vercel.app/',
+            inProgress: false,
+            featured: false,
+            stack: ['Next.js', 'Framer Motion', 'Tailwind CSS'],
+         },
+         {
+            id: 2,
+            title: 'Weather Forecast App',
+            shortDescription: 'Mobile weather forecasting application.',
+            fullDescription:
+               'A mobile weather application built with React Native, focused on providing current conditions and forecasts by city or user location. It includes search, favorites, unit switching, and light/dark mode, consuming real-time data from an external API to deliver an accurate and user-friendly experience.',
+            image: '/thumbnails/clima-app.png',
+            link: '',
+            inProgress: false,
+            featured: false,
+            stack: ['React Native', 'Expo', 'JavaScript'],
+            video: '/videos/clima-app.mp4',
+            apk: 'https://github.com/ALFAandWatch/clima-app/releases/download/v1.1.0/clima-app.apk',
+         },
+         {
+            id: 3,
+            title: 'Primeros Paso',
+            shortDescription: 'Business incubator platform.',
+            fullDescription:
+               'A business incubator platform currently under development, aimed at supporting local SMEs and fostering economic growth initiatives. The project is in its final stage before deployment, focusing on scalability and accessibility for emerging businesses.',
+            image: '/thumbnails/primerPaso.png',
+            link: 'https://incubadora-demo.vercel.app/',
+            inProgress: false,
+            featured: false,
+            stack: ['Next.js', 'Tailwind CSS', 'Supabase'],
+         },
+         {
+            id: 4,
+            title: 'Planner.uy - Landing Page',
+            shortDescription: 'Corporate landing page.',
+            fullDescription:
+               'Collaborated with Planner on the development of digital products for startups and companies, working on web design, frontend development, and interactive experiences to transform ideas into accessible and visually engaging interfaces.',
+            image: '/thumbnails/planner.png',
+            link: 'https://planner.uy/',
+            inProgress: false,
+            featured: false,
+            stack: ['HTML5', 'PHP', 'Sass', 'GSAP'],
+         },
+         {
+            id: 5,
+            title: 'SportTickers',
+            shortDescription: 'Sports ticker link library.',
+            fullDescription:
+               'This project originated from an idea I proposed while working at SportRadar, a company focused on sports statistics and betting markets. It consists of an organized library of sports ticker links. Initially built with HTML and PHP, it was later rebuilt using React. Currently, the frontend is deployed on Vercel and the backend runs on Supabase.',
+            image: '/thumbnails/sport-tickers.png',
+            link: 'https://sportstickers-supabase.vercel.app/',
+            inProgress: false,
+            featured: true,
+            stack: ['Next.js', 'Tailwind CSS', 'Supabase'],
+         },
+         {
+            id: 6,
+            title: 'ClickNest - E-commerce Platform',
+            shortDescription: 'Full-featured e-commerce application.',
+            fullDescription:
+               'A course project developed with a custom design. Built using Next.js (App Router) and Tailwind CSS, it includes user authentication, shopping cart functionality, and a fully working checkout system. The frontend is deployed on Vercel, the backend on Render, and the database on Supabase, delivering a smooth and responsive user experience.',
+            image: '/thumbnails/clickNest0.png',
+            link: 'https://clicknest-rho.vercel.app/',
+            inProgress: false,
+            featured: false,
+            academic: true,
+            stack: [
+               'React',
+               'Tailwind CSS',
+               'Node.js',
+               'Express',
+               'PostgreSQL',
+            ],
+         },
+      ],
+      info: [
+         {
+            key: 'email',
+            label: 'Email',
+            value: 'alfonso.gonzalezwebdev@gmail.com',
+         },
+         {
+            key: 'phone',
+            label: 'Phone',
+            value: '+59899567652',
+         },
+         {
+            key: 'location',
+            label: 'Location',
+            value: 'Tarariras, Departamento de Colonia, Uruguay',
+         },
+      ],
+   },
+};

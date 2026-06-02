@@ -1,6 +1,8 @@
 'use client';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/utils/translations';
 
 const CVButton = () => {
    const container = {
@@ -18,6 +20,9 @@ const CVButton = () => {
       show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
    };
 
+   const { lang } = useLanguage();
+   const t = translations[lang];
+
    return (
       <motion.div
          className="flex items-center gap-2 lg:gap-4"
@@ -32,7 +37,7 @@ const CVButton = () => {
             className="w-auto h-10 lg:h-12 px-3 lg:px-5 text-gray-600 dark:text-gray-300 text-xs text-nowrap font-extrabold border border-gray-600 dark:border-gray-300 hover:bg-[#059669] dark:hover:bg-violet-500 flex justify-center items-center rounded-full transition-colors duration-300 gap-0 lg:gap-2"
             variants={item}
          >
-            Mi CV (ES)
+            {t.s1.cv.downloadEs}
             <Image
                src="/download.png"
                alt="Descargar CV"
@@ -48,7 +53,7 @@ const CVButton = () => {
             className="w-auto h-10 lg:h-12 px-3 lg:px-5 text-gray-600 dark:text-gray-300 text-xs text-nowrap font-extrabold border border-gray-600 dark:border-gray-300 hover:bg-[#059669] dark:hover:bg-violet-500 flex justify-center items-center rounded-full transition-colors duration-300 gap-0 lg:gap-2"
             variants={item}
          >
-            Mi CV (EN)
+            {t.s1.cv.downloadEn}
             <Image
                src="/download.png"
                alt="Descargar CV"

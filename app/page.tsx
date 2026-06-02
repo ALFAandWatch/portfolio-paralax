@@ -6,16 +6,15 @@ import StackCard from '@/components/StackCard/StackCard';
 import ProjectCard from '@/components/ProjectCard/ProjectCard';
 import CVButton from '@/components/CVButton/CVButton';
 import ContactoCard from '@/components/contactoCard/ContactoCard';
-
 import { backStack } from '@/utils/backStack';
 import { frontStack } from '@/utils/frontStack';
-import { projects } from '@/utils/projects';
-import { contacto } from '@/utils/contacto';
 import { useState } from 'react';
 import ProjectModal from '@/components/ProjectModal/ProjectModal';
-
 import { motion } from 'framer-motion';
 import { useVisits } from '@/hooks/useVisits';
+import HighlightedProjectCard from '@/components/HihglightedProjectCard/HighlightedPorjectCard';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/utils/translations';
 
 export default function Home() {
    const [selectedProject, setSelectedProject] = useState(null);
@@ -31,12 +30,19 @@ export default function Home() {
       setSelectedProject(null);
    };
 
-   const rows = [];
-   for (let i = 0; i < projects.length; i += 3) {
-      rows.push(projects.slice(i, i + 3));
-   }
-
    const visits = useVisits();
+   const { lang } = useLanguage();
+
+   const t = translations[lang];
+
+   const highlightedProjects = t.projects.filter(
+      (project) => project.academic || project.featured
+   );
+
+   const rows = [];
+   for (let i = 0; i < t.projects.length; i += 2) {
+      rows.push(t.projects.slice(i, i + 2));
+   }
 
    const container = {
       hidden: {},
@@ -127,9 +133,9 @@ export default function Home() {
                      </h1>
 
                      <p className="text-2xl lg:text-4xl font-medium text-gray-600 dark:text-gray-100">
-                        Soy{' '}
+                        {t.s1.introduction}
                         <motion.span
-                           className="text-transparent bg-clip-text bg-gradient-to-r from-[#6D28D9] to-[#0E7490] dark:from-[#8B5CF6] dark:to-[#22D3EE]"
+                           className="text-transparent bg-clip-text bg-linear-to-r from-[#6D28D9] to-[#0E7490] dark:from-[#8B5CF6] dark:to-[#22D3EE]"
                            initial={{ opacity: 0 }}
                            animate={{ opacity: 1 }}
                            transition={{ duration: 0.8, delay: 0.3 }}
@@ -139,8 +145,7 @@ export default function Home() {
                      </p>
 
                      <p className="max-w-xl text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-                        Desarrollador web enfocado en crear interfaces modernas,
-                        fluidas y con atención al detalle.
+                        {t.s1.description}
                      </p>
                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 opacity-0 hover:opacity-100 transition duration-75">
                         👀 {visits} visitas
@@ -227,26 +232,43 @@ export default function Home() {
                      </motion.div>
                   </div>
                   <div className="w-1/2 text-5xl text-gray-200 hidden lg:block">
-                     <h2 className="font-bold">Algunos de mis hobbies.</h2>
+                     <h2 className="font-bold">{t.s2.hobbiesTitle}</h2>
                      <Seccion2 />
                   </div>
                </div>
             </section>
+         </div>
+         <div className="p-5 bg-[rgba(225,245,235,1)] dark:bg-black">
+            <h2 className="font-bold text-5xl text-center text-gray-600 dark:text-gray-100 p-2">
+               {t.s_extra.title}{' '}
+            </h2>
+            <div className="flex flex-col gap-15 items-center max-w-5xl mx-auto mt-10">
+               {highlightedProjects.map((project) => {
+                  return (
+                     <HighlightedProjectCard
+                        key={project.id}
+                        project={project}
+                        t={t}
+                        onClick={() => openModal(project)}
+                     />
+                  );
+               })}
+            </div>
          </div>
          <div className="parallax-container-2">
             {/* SECTION 3 */}
             <section className="section-container-fluid fondo-seccion-3 relative z-200 pt-15">
                <div>
                   <h2 className="font-bold text-5xl text-center text-gray-600 dark:text-gray-100">
-                     Algunos Proyectos
+                     {t.s3.title}
                   </h2>
                </div>
 
-               <div className="flex flex-col gap-16 p-10">
+               <div className="flex flex-col items-center gap-10 p-10">
                   {rows.map((row, rowIndex) => (
                      <motion.div
                         key={rowIndex}
-                        className="grid grid-cols-1 lg:grid-cols-3 gap-16"
+                        className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch w-full"
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, margin: '-50px' }}
@@ -256,6 +278,7 @@ export default function Home() {
                            <ProjectCard
                               key={i}
                               project={project}
+                              t={t}
                               onClick={() => openModal(project)}
                            />
                         ))}
@@ -267,20 +290,19 @@ export default function Home() {
                   isOpen={isModalOpen}
                   onClose={closeModal}
                   project={selectedProject}
+                  t={t}
                />
             </section>
             {/* SECTION 4 */}
             <section className="last-container overflow-hidden fondo-seccion-4 sticky bottom-0 z-2">
                <h2 className="text-3xl lg:text-5xl text-gray-600 dark:text-gray-100 font-bold text-center py-7 lg:py-15">
-                  Contacto
+                  {t.s4.title}
                </h2>
                <div className="grid grid-cols-2 lg:flex lg:flex-nowrap justify-center gap-3 lg:gap-10">
-                  {contacto.map((item, i) => (
+                  {t.info.map((item, i) => (
                      <div
                         key={i}
-                        className={
-                           i === contacto.length - 1 ? 'col-span-2' : ''
-                        }
+                        className={i === t.info.length - 1 ? 'col-span-2' : ''}
                      >
                         <ContactoCard contacto={item} />
                      </div>

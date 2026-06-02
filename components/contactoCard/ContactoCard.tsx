@@ -1,20 +1,28 @@
 import Image from 'next/image';
 
+type ContactKey = 'email' | 'phone' | 'location';
+
 interface ContactoCardProps {
    contacto: {
-      imagen: string;
+      key: ContactKey;
       label: string;
-      dato: string;
+      value: string;
    };
 }
 
 const ContactoCard = ({ contacto }: ContactoCardProps) => {
-   const { imagen, label, dato } = contacto;
+   const { key, label, value } = contacto;
+
+   const iconMap = {
+      email: '/mail.svg',
+      phone: '/phone.svg',
+      location: '/location.svg',
+   };
 
    return (
       <div className="flex flex-col justify-around items-center lg:gap-4 min-h-20 h-fit text-center">
          <Image
-            src={imagen}
+            src={iconMap[key]}
             alt="Ícono"
             width={50}
             height={50}
@@ -23,7 +31,7 @@ const ContactoCard = ({ contacto }: ContactoCardProps) => {
          <h3 className="text-xl text-gray-600 dark:text-gray-100 font-bold">
             {label}
          </h3>
-         <p className="text-lg text-gray-600 dark:text-gray-100">{dato}</p>
+         <p className="text-lg text-gray-600 dark:text-gray-100">{value}</p>
       </div>
    );
 };

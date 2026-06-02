@@ -1,8 +1,11 @@
 'use client';
+import { useLanguage } from '@/context/LanguageContext';
+import { TranslationSchema } from '@/utils/translations';
 import Image from 'next/image';
 
 interface ProjectProps {
    project: {
+      id: number;
       title: string;
       shortDescription: string;
       fullDescription: string;
@@ -10,71 +13,88 @@ interface ProjectProps {
       link: string;
       inProgress: boolean;
       featured?: boolean;
+      academic?: boolean;
       stack: string[];
    };
+
    onClick: () => void;
 }
 
-const ProjectCard = ({ project, onClick }: ProjectProps) => {
-   const { title, shortDescription, image, inProgress, featured, stack } =
-      project;
+const ProjectCard = ({
+   project,
+   onClick,
+   t,
+}: ProjectProps & { t: TranslationSchema }) => {
+   const {
+      title,
+      shortDescription,
+      image,
+      inProgress,
+      featured,
+      academic,
+      stack,
+   } = project;
+
+   const { lang } = useLanguage();
 
    return (
       <div
          onClick={onClick}
-         className={`group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 bg-black border 
-                     ${featured ? 'border-cyan-400 shadow-[0_0_25px_rgba(34,211,238,0.6)]' : 'border-zinc-800 shadow-[0_0_20px_rgba(255,255,255,0.08)]'}
-                     hover:border-white/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/10`}
+         className={`group relative aspect-video w-full overflow-hidden cursor-pointer transition-all duration-500 bg-black border-3 dark:border-2 h-full flex flex-col 
+                  ${
+                     featured
+                        ? 'border-cyan-400 shadow-[0_0_80px_rgba(34,211,238,0.7)]'
+                        : academic
+                          ? 'border-orange-400 shadow-[0_0_80px_rgba(251,146,60,0.7)]'
+                          : 'border-zinc-800 shadow-[0_0_20px_rgba(255,255,255,0.08)]'
+                  }
+                  hover:-translate-y-2`}
       >
-         <div className="relative h-60 overflow-hidden">
+         <div className="relative aspect-video overflow-hidden">
             <Image
                src={image}
-               alt={title}
+               alt="Project Image"
                fill
                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-               className="object-cover transform scale-100 transition-transform duration-1500 ease-out will-change-transform group-hover:scale-110"
+               className="object-cover transform scale-100 transition-transform duration-1500 ease-out"
             />
-            <div className="absolute inset-0 bg-black/0 dark:bg-black/40 group-hover:bg-black/0 dark:group-hover:bg-black/30 transition-all duration-500 pointer-events-none" />
+            <div className="absolute inset-0 bg-black/0 dark:bg-black/40 transition-all duration-500 pointer-events-none" />
          </div>
 
          {featured && (
-            <div className="absolute top-4 right-4 z-20 bg-cyan-400/20 text-cyan-300 text-xs font-semibold px-4 py-1 rounded-full border border-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)] backdrop-blur-sm">
-               PROYECTO DESTACADO
+            <div className="absolute top-4 right-4 z-20 uppercase bg-cyan-400/50 text-gray-100 text-xs font-semibold px-4 py-1 rounded-full border border-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)] backdrop-blur-sm">
+               {t.labels.featured}
+            </div>
+         )}
+
+         {academic && (
+            <div className="absolute top-4 right-4 z-20 uppercase bg-orange-400/50 text-gray-100 text-xs font-semibold px-4 py-1 rounded-full border border-orange-400 shadow-[0_0_10px_rgba(34,211,238,0.8)] backdrop-blur-sm">
+               {t.labels.academic}
             </div>
          )}
 
          {inProgress && (
-            <div className="absolute top-4 left-4 z-10 bg-yellow-400 text-black text-xs font-semibold px-3 py-1 rounded-full shadow-md">
-               En progreso
+            <div className="absolute top-4 left-4 z-10 uppercase bg-yellow-400 text-black text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+               {t.labels.inProgress}
             </div>
          )}
 
-         <div className="p-6 bg-gradient-to-b bg-zinc-50 dark:bg-zinc-900 flex flex-col h-full">
-            <h3 className="text-2xl font-semibold text-gray-600 dark:text-gray-100 text-center mb-4">
+         <div className="p-2 flex flex-col justify-end gap-1 items-start h-2/5 w-full absolute bottom-0 opacity-0 translate-y-10 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 bg-black/20 backdrop-blur-md">
+            <h3 className="text-2xl font-semibold text-white [text-shadow:0_0_4px_black] text-center">
                {title}
             </h3>
 
-            {/* Stack */}
-            <div className="flex flex-wrap justify-center gap-2 my-4">
-               {stack.map((tech) => (
-                  <span
-                     key={tech}
-                     className="text-xs px-3 py-1 rounded-full bg-gray-600/20 dark:bg-white/10 text-gray-600 dark:text-gray-100/80 border border-gray-600 dark:border-white/10"
-                  >
-                     {tech}
-                  </span>
-               ))}
-            </div>
-
-            <p className="text-md text-gray-600 dark:text-gray-100 text-center leading-relaxed grow">
+            <p className="text-md text-white [text-shadow:0_0_4px_black] leading-relaxed">
                {shortDescription}
             </p>
-
-            <div className="mt-5 flex justify-center">
-               <span className="text-xs tracking-widest text-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  VER DETALLES →
-               </span>
-            </div>
+            <a
+               href={project.link}
+               target="_blank"
+               rel="noopener noreferrer"
+               className="bg-[#059669] dark:bg-violet-500 text-white px-8 py-3 font-semibold hover:brightness-110 transition"
+            >
+               {t.labels.visit}
+            </a>
          </div>
       </div>
    );

@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/utils/translations';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,6 +55,9 @@ const Seccion2 = () => {
       });
    }, []);
 
+   const { lang } = useLanguage();
+   const t = translations[lang];
+
    return (
       <div className="w-full h-full relative">
          <div
@@ -61,7 +66,7 @@ const Seccion2 = () => {
          >
             <div className="relative">
                <h2 className="text-2xl text-gray-600 dark:text-gray-100 absolute top-3 -left-7 bg-[rgb(225,245,235)] dark:bg-gray-800 p-3 rounded-md">
-                  Voy al Gimnasio
+                  {t.s2.gym}
                </h2>
                <Image
                   src="/mancuernas.webp"
@@ -78,7 +83,7 @@ const Seccion2 = () => {
          >
             <div className="relative">
                <h2 className="text-2xl text-gray-600 dark:text-gray-100 absolute -top-3 -left-10 -rotate-15 bg-[rgb(225,245,235)] dark:bg-gray-800 p-3 rounded-md">
-                  Fan del Smash
+                  {t.s2.smash}
                </h2>
                <Image
                   src="/smash.avif"
@@ -95,10 +100,10 @@ const Seccion2 = () => {
          >
             <div className="relative">
                <h2 className="text-2xl text-gray-600 dark:text-gray-100 absolute -bottom-3 -left-10 -rotate-7 bg-[rgb(225,245,235)] dark:bg-gray-800 p-3 rounded-md">
-                  Escucho buen metal
+                  {t.s2.metal}
                </h2>
                <Image
-                  src="/slipknot.jpeg"
+                  src="/linkin-park.jpg"
                   alt="Slipknot"
                   width={300}
                   height={400}
