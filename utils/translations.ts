@@ -190,8 +190,8 @@ export const translations: Record<'es' | 'en', TranslationSchema> = {
          description:
             'Web developer crafting modern, polished interfaces with a strong focus on detail and user experience.',
          cv: {
-            downloadEs: 'Mi Resume (ES)',
-            downloadEn: 'Mi Resume (EN)',
+            downloadEs: 'My Resume (ES)',
+            downloadEn: 'My Resume (EN)',
          },
       },
       s2: {

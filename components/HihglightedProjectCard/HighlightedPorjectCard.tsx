@@ -50,7 +50,7 @@ const HighlightedProjectCard = ({
          )}
          <div className="w-[95%] z-30 mx-auto flex flex-col justify-end gap-4 h-1/2">
             {academic && (
-               <div className="w-fit z-20 uppercase bg-orange-400/50 text-gray-100 text-xs font-semibold px-4 py-1 rounded-full border border-orange-400 shadow-[0_0_10px_rgba(34,211,238,0.8)] backdrop-blur-sm">
+               <div className="w-fit z-20 uppercase bg-orange-400/50 text-gray-100 text-xs font-semibold px-4 py-1 rounded-full border border-orange-400 shadow-[0_0_10px_rgba(251,146,60,0.8)] backdrop-blur-sm">
                   {t.labels.academic}
                </div>
             )}

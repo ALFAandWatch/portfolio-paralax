@@ -5,6 +5,7 @@ import './globals.css';
 import ThemeToggle from '@/components/ThemeToggle/ThemeToggle';
 import { LanguageProvider } from '@/context/LanguageContext';
 import LanguageToggle from '@/components/LanguageToggle/LanguageToggle';
+import { cookies } from 'next/headers';
 
 const poppins = Poppins({
    subsets: ['latin'],
@@ -23,13 +24,16 @@ export const metadata: Metadata = {
    description: 'I am Alfonso and this is my portfolio.',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
    children,
 }: Readonly<{
    children: React.ReactNode;
 }>) {
+   const cookieStore = await cookies();
+   const lang = cookieStore.get('lang')?.value || 'es';
+
    return (
-      <html lang="es" className="dark">
+      <html lang={lang} className="dark">
          <body className={`${instrumentSans.className} antialiased relative`}>
             <LanguageProvider>
                <div className="flex flex-col items-center fixed top-5 right-10 gap-2 z-300">

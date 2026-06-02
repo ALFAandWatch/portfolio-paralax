@@ -48,7 +48,7 @@ export default function Home() {
       hidden: {},
       show: {
          transition: {
-            staggerChildren: 0.35,
+            staggerChildren: 0.5,
             delayChildren: 0.5,
          },
       },
@@ -96,7 +96,7 @@ export default function Home() {
                   className="w-full h-screen flex flex-col md:flex-row"
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
+                  transition={{ duration: 1 }}
                >
                   <div className="w-screen lg:w-1/2 h-2/3 lg:h-full flex items-start lg:items-center justify-end px-0 lg:px-10">
                      <div
@@ -132,17 +132,21 @@ export default function Home() {
                         </span>
                      </h1>
 
-                     <p className="text-2xl lg:text-4xl font-medium text-gray-600 dark:text-gray-100">
-                        {t.s1.introduction}
-                        <motion.span
-                           className="text-transparent bg-clip-text bg-linear-to-r from-[#6D28D9] to-[#0E7490] dark:from-[#8B5CF6] dark:to-[#22D3EE]"
-                           initial={{ opacity: 0 }}
-                           animate={{ opacity: 1 }}
-                           transition={{ duration: 0.8, delay: 0.3 }}
+                     <div className="flex gap-2">
+                        <p className="text-2xl lg:text-4xl font-medium text-gray-600 dark:text-gray-100">
+                           {t.s1.introduction}{' '}
+                        </p>
+                        <motion.div
+                           className=""
+                           initial={{ opacity: 0, x: 200 }}
+                           animate={{ opacity: 1, x: 0 }}
+                           transition={{ duration: 2.5, delay: 0.5 }}
                         >
-                           Alfonso González
-                        </motion.span>
-                     </p>
+                           <p className="text-transparent bg-clip-text bg-linear-to-r from-[#6D28D9] to-[#0E7490] dark:from-[#8B5CF6] dark:to-[#22D3EE] text-2xl lg:text-4xl font-medium">
+                              Alfonso González
+                           </p>
+                        </motion.div>
+                     </div>
 
                      <p className="max-w-xl text-lg leading-relaxed text-gray-600 dark:text-gray-300">
                         {t.s1.description}
