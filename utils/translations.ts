@@ -58,7 +58,7 @@ export const translations: Record<'es' | 'en', TranslationSchema> = {
       s1: {
          introduction: 'Soy',
          description:
-            'Desarrollador web enfocado en crear interfaces modernas fluidas y con atención al detalle.',
+            'Desarrollador web enfocado en Frontend, con más de 3 años de aprendizaje continuo y experiencia en múltiples proyectos reales. Me especializo en crear interfaces modernas y desarrollar funcionalidades, con un fuerte entendimiento de cómo funciona la web de punta a punta, incluyendo desarrollo de backends en Node.js y PHP.',
          cv: {
             downloadEs: 'Mi CV (ES)',
             downloadEn: 'Mi CV (EN)',
@@ -188,7 +188,7 @@ export const translations: Record<'es' | 'en', TranslationSchema> = {
       s1: {
          introduction: 'I am',
          description:
-            'Web developer crafting modern, polished interfaces with a strong focus on detail and user experience.',
+            'Frontend-focused Web Developer with over 3 years of continuous learning and experience across multiple real-world projects. I specialize in building modern interfaces and developing features, with a strong understanding of how the web works end-to-end, including backend development with Node.js and PHP.',
          cv: {
             downloadEs: 'My Resume (ES)',
             downloadEn: 'My Resume (EN)',
