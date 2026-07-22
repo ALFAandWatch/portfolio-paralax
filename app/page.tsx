@@ -101,10 +101,11 @@ export default function Home() {
                   <div className="w-screen lg:w-1/2 h-2/3 lg:h-full flex items-start lg:items-center justify-end px-0 lg:px-10">
                      <div
                         className="
-                                       foto-perfil-card relative w-full lg:w-3/4 h-3/4 mt-14 mx-14 lg:mx-0
+                                       foto-perfil-card relative w-full lg:w-3/4 h-3/4 mt-14 mx-20 lg:mx-0
                                        rounded-3xl
                                        bg-white/5 backdrop-blur-xl
                                        border border-white/10
+                                       overflow-hidden
                                        dark:shadow-[0_20px_60px_rgba(139,92,246,0.35)]
                                        shadow-[0_20px_60px_rgba(5,150,105,0.35)]
                                        dark:hover:shadow-[0_30px_80px_rgba(139,92,246,0.55)]
@@ -112,12 +113,19 @@ export default function Home() {
                                        transition-all duration-500
                                        "
                      >
-                        <Image
+                        {/* <Image
                            src="/perfilbyn.png"
                            alt="Alfonso Gonzalez"
                            fill
                            sizes="50vw"
                            className="object-contain lg:object-cover hover:brightness-120 transition-all duration-800 ease-in-out"
+                        /> */}
+                        <Image
+                           src="/perfil2.png"
+                           alt="Alfonso Gonzalez"
+                           fill
+                           sizes="50vw"
+                           className="object-cover object-[center_-10%] lg:object-[center_top] hover:brightness-120 transition-all duration-800 ease-in-out"
                         />
                      </div>
                   </div>

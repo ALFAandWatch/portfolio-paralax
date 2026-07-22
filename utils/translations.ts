@@ -88,16 +88,23 @@ export const translations: Record<'es' | 'en', TranslationSchema> = {
       projects: [
          {
             id: 1,
-            title: 'NeuroFlow',
+            title: 'CompanyRadar',
             shortDescription:
-               'Landing page tipo SaaS para plataforma de automatización con IA.',
+               'Plataforma para explorar empresas por categoría y país.',
             fullDescription:
-               'Landing page inspirada en productos SaaS que simula una plataforma de automatización impulsada por inteligencia artificial. Incluye una demo interactiva con navegación por tabs, animaciones y visualización de métricas para transmitir cómo funcionaría el producto en un entorno real. El foco está en la experiencia de usuario, la claridad del mensaje y un diseño moderno orientado a conversión. Desarrollada con Next.js, Tailwind y Framer Motion.',
-            image: '/thumbnails/NeuroFlow.png',
-            link: 'https://neuro-flow-two.vercel.app/',
+               'CompanyRadar es una aplicación web que permite descubrir y explorar empresas según su categoría y presencia geográfica. Los usuarios pueden navegar perfiles de empresas, ver enlaces relevantes y sugerir nuevas compañías mediante un formulario. El proyecto está construido con Next.js (App Router) y TailwindCSS, utilizando Supabase como backend para la gestión y almacenamiento de datos. Se enfoca en una interfaz limpia, un modelo de datos simple y una experiencia de usuario fluida.',
+            image: '/thumbnails/CompanyRadar1.png',
+            link: 'https://company-radar-sepia.vercel.app/es',
             inProgress: false,
-            featured: false,
-            stack: ['Next.js', 'Framer Motion', 'TailwindCSS'],
+            featured: true,
+            academic: false,
+            stack: [
+               'Next.js',
+               'React',
+               'TailwindCSS',
+               'Supabase',
+               'PostgreSQL',
+            ],
          },
          {
             id: 2,
@@ -218,16 +225,23 @@ export const translations: Record<'es' | 'en', TranslationSchema> = {
       projects: [
          {
             id: 1,
-            title: 'NeuroFlow',
+            title: 'CompanyRadar',
             shortDescription:
-               'SaaS landing page for an AI-powered automation platform.',
+               'Platform to explore companies by category and country.',
             fullDescription:
-               'A SaaS-inspired landing page that simulates an AI-powered automation platform. It features an interactive demo with tab navigation, smooth animations, and metrics visualization to showcase how the product would work in a real-world scenario. The focus is on user experience, clear messaging, and a modern, conversion-driven design. Built with Next.js, Tailwind CSS, and Framer Motion.',
-            image: '/thumbnails/NeuroFlow.png',
-            link: 'https://neuro-flow-two.vercel.app/',
+               'CompanyRadar is a web application that allows users to discover and explore companies based on category and geographic presence. Users can browse company profiles, view relevant links, and suggest new companies through a submission form. The project is built with Next.js (App Router) and TailwindCSS, using Supabase as the backend for data storage and management. It focuses on clean UI, simple data modeling, and a smooth user experience.',
+            image: '/thumbnails/CompanyRadar1.png',
+            link: 'https://company-radar-sepia.vercel.app/en',
             inProgress: false,
-            featured: false,
-            stack: ['Next.js', 'Framer Motion', 'Tailwind CSS'],
+            featured: true,
+            academic: false,
+            stack: [
+               'Next.js',
+               'React',
+               'TailwindCSS',
+               'Supabase',
+               'PostgreSQL',
+            ],
          },
          {
             id: 2,

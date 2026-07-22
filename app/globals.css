@@ -145,6 +145,11 @@ body {
    filter: brightness(110%);
    /* background-color: rgba(255, 255, 255, 0.6); */
 }
+@media screen and (max-width: 768px) {
+   .foto-perfil-card {
+      border-radius: 1rem 7rem 1rem 7rem;
+   }
+}
 
 /************************** SECCION 2 ****************************************************/
 /*****************************************************************************************/
